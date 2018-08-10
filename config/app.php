@@ -2,6 +2,10 @@
 
 return [
 
+    'companySubDomain' => env('APP_COMPANY_SUB_DOMAIN', ''),
+    'bambooApiKey' => env('APP_BAMBOO_API_KEY', ''),
+    'zohoToken' => env('APP_ZOHO_TOKEN', ''),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

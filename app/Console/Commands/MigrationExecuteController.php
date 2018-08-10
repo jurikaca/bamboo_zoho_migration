@@ -7,13 +7,13 @@ use Illuminate\Console\Command;
 class MigrationExecuteController extends Command
 {
     // bamboo hr details
-    protected $companySubDomain = "scopicsoftware";
+    protected $companySubDomain;
     protected $bambooBaseUrl="https://api.bamboohr.com/api/gateway.php/";
     protected $postParams;
-    protected $bambooApiKey = "beb339373b935137c05562b68190377f5328c600";
+    protected $bambooApiKey;
 
     // zoho details
-    private $zohoToken = "a3ee87edae89a0d3e343148e33c11e03"; //need change to real
+    private $zohoToken; //need change to real
     private $zohoBaseUrl = "https://people.zoho.com/people/api/";
 
 
@@ -39,6 +39,9 @@ class MigrationExecuteController extends Command
     public function __construct()
     {
         parent::__construct();
+        $this->companySubDomain = config('app.companySubDomain');
+        $this->bambooApiKey = config('app.bambooApiKey');
+        $this->zohoToken = config('app.zohoToken');
     }
 
     /**
